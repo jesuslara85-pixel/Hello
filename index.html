@@ -1,1 +1,61 @@
-¡hello World!
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Básica</title>
+  <style>
+    body { text-align: center; font-family: Arial; background: #f0f0f0; padding: 50px; }
+    input, button { font-size: 24px; padding: 10px; margin: 5px; }
+    button { width: 60px; }
+    #resultado { width: 264px; }
+  </style>
+</head>
+<body>
+
+  <h1>Calculadora Simple</h1>
+  
+  <input type="text" id="resultado" placeholder="0" readonly>
+  <br><br>
+  
+  <button onclick="agregar('7')">7</button>
+  <button onclick="agregar('8')">8</button>
+  <button onclick="agregar('9')">9</button>
+  <button onclick="agregar('/')">/</button>
+  <br>
+  <button onclick="agregar('4')">4</button>
+  <button onclick="agregar('5')">5</button>
+  <button onclick="agregar('6')">6</button>
+  <button onclick="agregar('*')">×</button>
+  <br>
+  <button onclick="agregar('1')">1</button>
+  <button onclick="agregar('2')">2</button>
+  <button onclick="agregar('3')">3</button>
+  <button onclick="agregar('-')">−</button>
+  <br>
+  <button onclick="agregar('0')">0</button>
+  <button onclick="agregar('.')">.</button>
+  <button onclick="limpiar()">C</button>
+  <button onclick="agregar('+')">+</button>
+  <br><br>
+  <button onclick="calcular()" style="width:276px; background:#4CAF50; color:white;">=</button>
+
+  <script>
+    function agregar(num) {
+      document.getElementById('resultado').value += num;
+    }
+
+    function limpiar() {
+      document.getElementById('resultado').value = '';
+    }
+
+    function calcular() {
+      let cuenta = document.getElementById('resultado').value;
+      if (cuenta) {
+        document.getElementById('resultado').value = eval(cuenta.replace('×','*'));
+      }
+    }
+  </script>
+
+</body>
+</html>
